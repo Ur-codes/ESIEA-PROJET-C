@@ -20,9 +20,8 @@ int main()
     printf("2. Non\n");
     printf("Votre choix : ");
     scanf("%d", &regle);
-    if (regle != 1 || regle != 2) //<= toujours faux :/
-    {
-        while (regle != 1 && regle != 2)
+
+        while (regle != 1 || regle != 2)
         {
             printf("Vous avez saisi autre chose que 1 ou 2 donc veillez resaissir votre choix\n");
             printf("Votre saisi : ");
@@ -35,25 +34,35 @@ int main()
             printf("A tour de role, les joueurs enlèvent 1, 2 ou 3 allumettes.\n");
             printf("Celui qui prend la derniere allumette a perdu.\n\n");
         }
-        if(Config_garder ==1 );
+        if(Config_garder ==1 )
         {
             printf("Vous avez choisi de garder les regles par defaut.\n\n");
         }
+        else
+        {
+            printf("Avant de commencer la partie nous allons configurer les différents paramètres.\n");
+            printf("Combien de joueur vont jouer cette partie ?\n");
+            printf("Saisir le nombre de joueur : \n");
+            scanf("%d", &nb_joueur);
+            while (nb_joueur != 1 || nb_joueur != 2)
+            {
+                printf("Vous avez saisi autre chose que 1 ou 2 donc veillez resaissir votre choix\n");
+                printf("Saisir le nombre de joueur : \n");
+                scanf("%d", &nb_joueur);
+            }
+            printf("Maintenant, combien d'allumettes voulez vous mettre au debut de la partie ?\n");
+            printf("Votre choix doit etre compris entre 10 et 100 \n");
+            printf("Saisir le nombre d'allumettes : \n");
+            scanf("%d", &nb_allumettes);
+            while (nb_allumettes < 10 || nb_allumettes > 100)
+            {
+                printf("Vous avez saisi un nombre d'allumettes inferieur a 10 ou superieur a 100.\n");
+                printf("Veuillez resaisir le nombre d'allumettes : \n");
+                scanf("%d", &nb_allumettes);
+            }
+            printf("Vous avez choisi de jouer a %d joueur(s) et de mettre %d allumettes au debut de la partie.\n", nb_joueur, nb_allumettes);
+        }
     }
-    printf("Avant de commencer la partie nous allons configurer les différents paramètres.\n");
-    printf("Combien de joueur vont jouer cette partie ?\n");
-    printf("Saisir le nombre de joueur : \n");
-    scanf("%d", &nb_joueur);
-    if (nb_joueur != 1 || nb_joueur != 2)
-    {
-        printf("Vous avez saisi autre chose que 1 ou 2 donc veillez resaissir votre choix\n");
-        printf("Saisir le nombre de joueur : \n");
-        scanf("%d", &nb_joueur);
-    }
-    printf("Maintenant, combien d'allumettes voulez vous mettre au debut de la partie ?\n");
-    scanf("%d", &nb_allumettes);
-    printf("La partie peut maintenant commencer !\n");
-    printf("Bonne cha,ce et que le meilleur gagne !!!\n\n");
 
     while (rejouer == 1)
     {
