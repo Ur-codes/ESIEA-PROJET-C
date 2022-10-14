@@ -20,7 +20,7 @@ int main()
     printf("2. Non\n");
     printf("Votre choix : ");
     scanf("%d", &regle);
-    if (regle != 1 || regle != 2)
+    if (regle != 1 || regle != 2) //<= toujours faux :/
     {
         while (regle != 1 && regle != 2)
         {
