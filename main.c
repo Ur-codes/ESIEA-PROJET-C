@@ -21,6 +21,8 @@ int main()
     printf("Votre choix : ");
     scanf("%d", &regle);
 
+    printf("Hello World");
+
         while (regle != 1 || regle != 2)
         {
             printf("Vous avez saisi autre chose que 1 ou 2 donc veillez resaissir votre choix\n");
