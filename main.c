@@ -14,6 +14,7 @@ int main()
     int nb_joueur;
     int rejouer = 1;
     int Config_garder;
+    char nom_joueur[20];
 
     //****************************************************************************************************
     // introduction du jeu
@@ -22,7 +23,12 @@ int main()
     printf("\n============================================\n");
     printf("Bienvenue dans le jeu des allumettes !\n");
     printf("============================================\n\n");
-    printf("La partie va commencer, voulez vous un rappel des regles ?\n");
+
+    printf("Entrer votre prénom: ");
+    scanf("%s", &nom_joueur);
+    printf("Bonjour %s !\n", nom_joueur);
+
+    printf("La partie va commencer, voulez vous un rappel des regles ? \n");
     printf("1. Oui\n");
     printf("2. Non\n");
     printf("Votre choix : ");
