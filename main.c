@@ -16,6 +16,7 @@ int main()
     int config_garder = 0;
     char nom_joueur[20];
 
+
     //****************************************************************************************************
     // introduction du jeu
     //****************************************************************************************************
@@ -23,16 +24,13 @@ int main()
     printf("\n============================================\n");
     printf("Bienvenue dans le jeu des allumettes !\n");
     printf("============================================\n\n");
-
-    printf("Entrer votre prénom: ");
-    scanf("%s", &nom_joueur);
-    printf("Bonjour %s !\n", nom_joueur);
-
+    afficher_prenom(nom_joueur);
     printf("La partie va commencer, voulez vous un rappel des regles ? \n");
     printf("1. Oui\n");
     printf("2. Non\n");
     printf("Votre choix : ");
     scanf("%d", &regle);
+    afficher_regles(regle);
 
     //****************************************************************************************************
     // vérification de la saisie de l'utilisateur pour les règles
@@ -44,11 +42,24 @@ int main()
         printf("Votre saisi : ");
         scanf("%d", &regle);
     }
+    //****************************************************************************************************
+    // fonction affichage du prenom du joueur
+    //****************************************************************************************************
+
+        printf("Entrer votre prénom: ");
+        scanf("%s", &nom_joueur);
+        printf("Bonjour %s !\n", nom_joueur);
 
     //****************************************************************************************************
-    // affichage des règles si demander par l'utilisateur
+    // fonction affichage des règles si demander par l'utilisateur
     //****************************************************************************************************
 
+        if (regle == 1) {
+            printf("Le jeu se joue a deux joueurs ou contre un ordinateur.\n");
+            printf("Au debut de la partie, il y a un nombre allumettes que vous aller choisir.\n");
+            printf("A tour de role, les joueurs enlèvent 1, 2 ou 3 allumettes.\n");
+            printf("Celui qui prend la derniere allumette a perdu.\n\n");
+        }
     if (regle == 1)
     {
         printf("Le jeu se joue a deux joueurs ou contre un ordinateur.\n");
