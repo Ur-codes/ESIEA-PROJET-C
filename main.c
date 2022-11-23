@@ -354,7 +354,7 @@ void main() {
                             nb_allumettes_prises = 3;
                         }
                         else{
-                            nb_allumettes_prises = nb_allumettes % 4 + 1;
+                            nb_allumettes_prises = (nb_allumettes - 1) % 4;
                         }
                         printf("L'ordinateur a enleve %d allumettes.\n", nb_allumettes_prises);
                         nb_allumettes = nb_allumettes - nb_allumettes_prises;
